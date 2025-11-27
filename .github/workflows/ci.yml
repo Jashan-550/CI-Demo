@@ -2,9 +2,9 @@ name: Java CI Pipeline
 
 on:
   push:
-    branches: 
-      - main
+    branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -17,6 +17,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v2
         with:
+          distribution: 'temurin'
           java-version: '17'
 
       - name: Compile Java file
